@@ -1,0 +1,58 @@
+.cu-bar.topTime>view{
+    align-self: stretch;
+    flex-grow: 1;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;    
+}
+.cu-bar.topTime>view:not(.active){
+    background:rgba(255,255,255,0.3);
+    transition: all 0.3s;
+}
+
+.cu-bar>picker{
+    padding:20rpx;
+}
+.cu-bar>.date{
+    font-size:40rpx
+}
+.cu-bar>.time{
+    padding-top:30rpx;
+}
+
+.cu-modal-swiper{
+    position: absolute;
+    height:100%;
+    width:100%;
+    background:#fff;
+}
+.cu-modal-swiper .cu-modal-swiper-item{
+    display:flex;
+    flex-direction: column;
+}
+.cu-modal-swiper .cu-modal-swiper-item>text{
+    position: absolute;
+    top:0;
+    width:calc(100%/7);
+    background:#f7f7f7;
+    z-index: -1;
+    height:100%;
+}
+.cu-modal-swiper .cu-modal-swiper-item>view{
+    flex-grow:2;
+    display: flex;
+}
+.cu-modal-swiper .cu-modal-swiper-item>view:first-child{
+    flex-grow:1;
+    font-weight: bold;
+}
+.cu-modal-swiper .cu-modal-swiper-item>view>text{
+    flex-grow:1;
+    width:calc(100%/7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s;
+}
+.cu-modal-swiper .cu-modal-swiper-item>view>text.bg-green{ z-index:10 }

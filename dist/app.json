@@ -1,0 +1,72 @@
+{
+  "pages": [
+    "pages/index",
+    "pages/plugin"
+  ],
+  "subPackages": [
+    {
+      "root": "common",
+      "pages": [
+        "pages/plugin/animation",
+        "pages/plugin/indexes",
+        "pages/plugin/verticalnav",
+        "pages/basics/background",
+        "pages/basics/button",
+        "pages/basics/tag",
+        "pages/basics/progress",
+        "pages/basics/shadow",
+        "pages/basics/loading",
+        "pages/basics/bar",
+        "pages/basics/nav",
+        "pages/basics/list",
+        "pages/basics/card",
+        "pages/basics/form",
+        "pages/basics/timeline",
+        "pages/basics/chat",
+        "pages/basics/swiper",
+        "pages/basics/modal",
+        "pages/basics/steps",
+        "pages/basics/icon",
+        "pages/basics/dateSelect",
+        "pages/basics/order"
+      ]
+    }
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom",
+    "usingComponents": {
+      "custom-tab-bar": "/custom-tab-bar/index"
+    }
+  },
+  "usingComponents": {
+    "tap": "/components/cu-custom/index"
+  },
+  "tabBar": {
+    "custom": true,
+    "color": "#7A7E83",
+    "selectedColor": "#318efb",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/index"
+      },
+      {
+        "pagePath": "pages/plugin"
+      }
+    ]
+  },
+  "navigateToMiniProgramAppIdList": [],
+  "networkTimeout": {
+    "request": 300000
+  },
+  "sitemapLocation": "sitemap32.json"
+}

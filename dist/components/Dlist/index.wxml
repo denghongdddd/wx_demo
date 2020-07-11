@@ -1,0 +1,75 @@
+<view class='Dlist d-class'>
+    <text class="title">{{title}}</text>
+    <view wx:if="{{parse.inputK(type)}}" class="input {{!disabled&&parse.you(type)}} {{isSearch&&!disabled?'you':''}}" style="--align:{{align}};padding-right:{{!disabled?(parse.you(type)||isSearch?23:(type=='lookUp'?0:(icon?2:10))):10}}px;" catchtap="click">
+        <text wx:if="{{type=='search'}}" style="color:{{value?'':'#aaa'}};--align:{{align=='right'?'flex-end':(align=='left'?'flex-start':align)}}">{{value||(!disabled?(placeholder||'请选择'):'')}}</text>
+        <text wx:if="{{type=='textarea'}}" style="color:{{value?'':'#aaa'}};--align:{{align=='right'?'flex-end':(align=='left'?'flex-start':align)}}" catchtap="textInput">{{value||(!disabled?(placeholder||'请选择'):'')}}</text>
+        <input wx:if="{{parse.input(type)}}" cursor="{{cursor}}" focus="{{focus}}" bindfocus="inputFocus" bindblur="inputBlur" catchtap="demo" disabled="{{disabled}}" type="{{type}}" value="{{value}}" placeholder-style="color:#aaa;" placeholder="{{disabled?'':(placeholder||'请输入')}}" bindinput="input"/>
+        <text class="clean" catchtap="clean" wx:if="{{!disabled&&clean&&value&&(type!='radio')}}">+</text>
+        <view wx:if="{{type=='radio'}}" bindtap="radio" class="radio {{value&&'checked'}}" style="margin-left:{{align=='right'&&'calc(100% - 104rpx)'}}"/>
+    </view>
+    <picker
+        wx:if="{{!parse.inputK(type)||type=='lookUp'}}"
+        style="flex-grow:{{type=='lookUp'?'0':'1'}}"
+        range="{{range}}"
+        range-key="{{rangeKey}}"
+        bindchange="pickerChange"
+        disabled="{{disabled}}"
+        value="{{rangeIndex}}"
+        mode="{{type=='lookUp'?'selector':type}}"
+        >
+        <view class="{{disabled?'':'you'}}" style="color:{{value?'':'#aaa'}};padding-right:{{disabled?10:23}}px;--justify:{{align=='left'&&'flex-start'||'flex-end'}}">
+            {{type=='lookUp'?'':(value||(!disabled?(placeholder||'请选择'):''))}}
+            <text class="clean" catchtap="clean" wx:if="{{!disabled&&clean&&value&&type!='lookUp'}}">+</text>
+        </view>
+    </picker>
+    <text wx:if="{{icon&&!disabled}}" class="iconfont icon-{{icon}}" bindtap="iconClick"/>
+    <view wx:if="{{type=='textarea'}}" class="textarea_mask {{isTextarea?'show':''}}" >
+        <textarea
+            style="top:{{isCustomNav ? navH : 0}}px"
+            bindblur="textBlur"
+            focus="{{isTextarea}}"
+            placeholder="{{placeholder||'请输入'}}"
+            value="{{value}}"/>
+    </view>
+</view>
+<wxs module="parse">
+    module.exports={
+        inputK:function(type){
+            switch(type){
+                case 'digit':
+                case 'idcard':
+                case "search":
+                case 'number':
+                case 'textarea':
+                case "lookUp":
+                case "radio":
+                case "searchInput":
+                case 'text':return true;
+                default:return false;
+            }
+        },
+        input:function(type){
+            switch(type){
+                case 'digit':
+                case 'idcard':
+                case 'number':
+                case 'lookUp':
+                case "searchInput":
+                case 'text':return true;
+                default:return false;
+            }
+        },
+        you:function(type){
+            switch(type){
+                case 'digit':
+                case 'idcard':
+                case 'number':
+                case 'textarea':
+                case "lookUp":
+                case "radio":
+                case 'text':return '';
+                default:return "you";
+            }
+        },
+    }
+</wxs>

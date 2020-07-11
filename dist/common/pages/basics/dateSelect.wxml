@@ -1,0 +1,29 @@
+
+    <view class="body">
+        <tap bgColor="bg-gradual-pink" isBack="{{true}}">
+            <view slot="backText">返回</view>
+            <view slot="content">日期选择</view>
+        </tap>
+        
+        <view class="cu-form-group margin-top">
+            <view class="title">日期_时间</view>
+            <text bindtap="selectDate1">{{date1||"选择日期"}}</text>
+        </view>
+        <view class="cu-form-group margin-top">
+            <view class="title">日期</view>
+            <text bindtap="selectDate2">{{date2||"选择日期"}}</text>
+        </view>
+        <view class="cu-form-group margin-top">
+            <view class="title">禁用日期</view>
+            <text bindtap="selectDate3">{{date3||"选择日期"}}</text>
+        </view>
+        <view class="cu-form-group margin-top">
+            <view class="title">多选日期</view>
+            <text bindtap="selectDate4">{{date4.length>0?date4:"选择日期"}}</text>
+        </view>
+        <view class="cu-form-group margin-top">
+            <view class="title">日期范围</view>
+            <text bindtap="selectDate5">{{date5.length>0?(date5[0]+" to "+date5[1]):"选择日期"}}</text>
+        </view>
+        <dateSelect id="date" bindsubmit="dateValue"/>
+    </view>

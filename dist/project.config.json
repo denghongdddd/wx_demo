@@ -1,0 +1,91 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": false,
+		"postcss": false,
+		"minified": false,
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.9.0",
+	"appid": "wx6736885004bb213e",
+	"projectname": "demo",
+	"qcloudRoot": "cloudfunction/",
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"scripts": {},
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": 0,
+					"name": "选择日期",
+					"pathName": "common/pages/basics/dateSelect",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "标签",
+					"pathName": "common/pages/basics/tag",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "按钮",
+					"pathName": "common/pages/basics/button",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "排序",
+					"pathName": "common/pages/basics/order",
+					"query": "",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,1 @@
+.body>.icons{display:flex;flex-wrap:wrap}.body>.icons>view{display:flex;flex-direction:column;align-items:center;width:calc(100%/4);padding:20rpx 7rpx;box-sizing:border-box}.body>.icons>view>text:first-child{font-size:50rpx;color:#B27C0A}.body>.icons>view>text:last-child{font-size:25rpx;word-break:break-all;text-align:center}

@@ -1,0 +1,83 @@
+<view class="cu-modal {{isShow&&'show'}} {{loading&&'loading'}}" bindtap="hideDate">
+    <view class="cu-dialog {{(loading||disabled)&&'d-modal-blur'}}" style="--blur:{{loading?3:0}}rpx" catchtap="demo">
+        <view class="cu-bar bg-gradual-green shadow-warp topTime" wx:if="{{rangeType=='round'}}">
+            <view class="{{!roundIndex&&'active'}}" bindtap="select_round" data-index="{{0}}">
+                <text>From</text>
+                <text>{{selectDate[0]||"- -"}}</text>
+            </view>
+            <view class="{{roundIndex&&'active'}}" bindtap="select_round" data-index="{{1}}">
+                <text>To</text>
+                <text>{{selectDate[1]||"- -"}}</text>
+            </view>
+        </view>
+        <view class="cu-bar bg-white justify-center shadow-warp">
+            <picker mode="date" class="date" value="{{nowMonth}}" fields="month" bindchange="dateChange">{{nowMonth}}</picker>
+            <picker mode="time" class="time" value="{{showTime}}" wx:if="{{type=='date-time'}}" bindchange="timeChange">{{showTime}}</picker>
+        </view>
+        <view class="shadow-warp" style="height:500rpx;">
+            <swiper class="cu-modal-swiper" style="z-index:{{calendarIndex==0?'100':'10'}};" current="{{current0}}" data-index="{{0}}" bindchange="change" bindanimationfinish="end">
+                <swiper-item class="cu-modal-swiper-item" wx:for="{{list0}}" wx:for-item="week" wx:for-index="i1">
+                    <text style="left:0;"/>
+                    <text style="right:0;"/>
+                    <view> <text>日</text><text>一</text><text>二</text><text>三</text><text>四</text><text>五</text><text>六</text> </view>
+                    <view wx:for="{{week}}" wx:for-item="days" wx:for-index="i2">
+                        <text
+                            wx:for="{{days}}"
+                            wx:for-item="day"
+                            wx:for-index="i3"
+                            class="{{parse.day_class(day,selectDate,nowMonth,rangeType)}}"
+                            bindtap="selectDay"
+                            data-index="{{[i1,i2,i3]}}">{{parse.day(day.dateForm)}}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+            <swiper class="cu-modal-swiper" style="z-index:{{calendarIndex==1?'100':'10'}};" current="{{current1}}" data-index="{{1}}" bindchange="change" bindanimationfinish="end">
+                <swiper-item class="cu-modal-swiper-item" wx:for="{{list1}}" wx:for-item="week" wx:for-index="i1">
+                    <text style="left:0;"/>
+                    <text style="right:0;"/>
+                    <view> <text>日</text><text>一</text><text>二</text><text>三</text><text>四</text><text>五</text><text>六</text> </view>
+                    <view wx:for="{{week}}" wx:for-item="days" wx:for-index="i2">
+                        <text
+                            wx:for="{{days}}"
+                            wx:for-item="day"
+                            wx:for-index="i3"
+                            class="{{parse.day_class(day,selectDate,nowMonth,rangeType)}}"
+                            bindtap="selectDay"
+                            data-index="{{[i1,i2,i3]}}">{{parse.day(day.dateForm)}}</text>
+                    </view>
+                </swiper-item>
+            </swiper>
+        </view>
+        <view class="cu-bar bg-white justify-end">
+            <view class="action">
+                <button class="cu-btn line-green text-green" bindtap="hideDate">取消</button>
+                <button class="cu-btn bg-green margin-left"  bindtap="submit">确定</button>
+            </view>
+        </view>
+    </view>
+</view>
+<wxs module="parse">
+    module.exports={
+        day_class:function(item,date,month,rangeType){
+            var str=[]
+            if(item.dateForm.slice(0,7)!=month){
+                if(rangeType=="round"&&(date[0]<=item.dateForm)&&(item.dateForm<=date[1]))str=["radius","shadow","bg-green","light"];
+                else if(date.indexOf(item.dateForm)>=0)str=["radius","shadow","bg-green","light"];
+                else if(item.isDisabled)str=["bg-grey","light"];
+            }else if(item.isDisabled)str=["bg-grey"];
+            else if(rangeType=="round"&&(date[0]<=item.dateForm)&&(item.dateForm<=date[1]))str=["bg-green","shadow"];
+            else if(date.indexOf(item.dateForm)>=0)str=["bg-green",'radius',"shadow"];
+
+            if(item.isNow)str.push("text-orange");
+            else if(item.dateForm.slice(0,7)!=month)str.push("text-gray");
+            else if(item.isDisabled||date.indexOf(item.dateForm)>=0)str.push("text-white");
+            else if(rangeType=="round"&&(date[0]<=item.dateForm)&&(item.dateForm<=date[1]))str.push("text-white");
+            else str.push("text-black");
+            return str.join(" ")
+        },
+        day:function(val){
+            if(val)return parseInt(val.slice(8,10));
+            return "";
+        },
+    }
+</wxs>

@@ -1,0 +1,1 @@
+"use strict";var Mime=require("./Mime.js");module.exports=new Mime(require("./types/standard.js"),require("./types/other.js"));

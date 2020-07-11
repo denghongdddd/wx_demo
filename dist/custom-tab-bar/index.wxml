@@ -1,0 +1,17 @@
+<cover-view class="cu-bar tabbar bg-white shadow foot" wx:if="{{tabShow}}">
+
+  <cover-view class="action" bindtap="NavChange" data-url="index" data-index='0'>
+    <cover-view class='cuIcon-cu-image'>
+      <cover-image src="/images/basics{{iProductType==0?'_cur':''}}.png"/>
+    </cover-view>
+    <cover-view class="{{iProductType==0?'text-green':'text-gray'}}">组件</cover-view>
+  </cover-view>
+
+  <cover-view class="action" bindtap="NavChange" data-url="plugin" data-index='1'>
+    <cover-view class='cuIcon-cu-image'>
+      <cover-image src="/images/plugin{{iProductType==1?'_cur':''}}.png"/>
+    </cover-view>
+    <cover-view class="{{iProductType==1?'text-green':'text-gray'}}">扩展</cover-view>
+  </cover-view>
+
+</cover-view>

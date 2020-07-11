@@ -1,0 +1,37 @@
+<view class="search i-search">
+    <view class="list" wx:if="{{isSelect}}">
+        <view class="mask" style="display:{{downShow}}" bindtap="hideDown"></view>
+        <view class="value" bindtap="openDown">
+          <text class="title">{{list[I].title}}</text>
+          <text class="iconfont icon-xiala"></text>
+        </view>
+        <view class="down {{downShow?'':'show'}}">
+            <view wx:for="{{list}}" class="{{index==I&&'active'}}" data-value="{{index}}" bindtap="selectValue">{{item.title}}</view>
+        </view>
+    </view>
+    <view class="input {{isFocus?'focus':''}} {{listRight.length==0?'':'right'}}">
+        <view class="input" wx:if="{{img}}">
+            <image src="{{img}}" mode="aspectFill" />
+        </view>
+        <input wx:else class="input {{isSelect?'':'radius'}}" value="{{inputV}}" placeholder="{{placeholder}}" bindinput="inputValue" bindconfirm="confirm" bindfocus='focus' bindblur='blur'/>
+        <text class="iconfont icon-chacha" wx:if="{{isX||img}}" bindtap="clean"></text>
+        <view class="search" bindtap='search' wx:if="{{listRight.length==0}}">
+            <text class="iconfont {{icon}}" style="font-size:50rpx;"></text>
+        </view>
+    </view>
+    <view class="list right" wx:if="{{listRight.length>0}}">
+        <view class="mask" style="display:{{downShowRight}}" bindtap="hideDownRight"></view>
+        <view class="value" bindtap="openDownRight">
+          <text class="title">{{listRight[Iright].title}}</text>
+          <text class="iconfont icon-xiala"></text>
+        </view>
+        <view class="down {{downShowRight?'':'show'}}">
+            <view wx:for="{{listRight}}" class="{{index==Iright&&'active'}}" data-value="{{index}}" bindtap="selectValueRight">{{item.title}}</view>
+        </view>
+    </view>
+</view>
+<wxs module="parse">
+    module.exports={
+        
+    }
+</wxs>

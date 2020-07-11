@@ -1,0 +1,4 @@
+.cu-dialog>.cu-bar>view{
+    height: auto;
+    align-self: stretch;
+}

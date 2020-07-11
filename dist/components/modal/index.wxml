@@ -1,0 +1,30 @@
+<view class="cu-modal {{isShow&&'show'}} {{type=='bottom'&&'bottom-modal'}}" bindtap="hideModal">
+    <view class="cu-dialog" catchtap="demo">
+        <view class="cu-bar bg-white {{parse.end(type)}}">
+            <block wx:if="{{type=='bottom'}}">
+                <view class="action text-green">确定</view>
+                <view class="action text-blue" bindtap="hideModal">取消</view>
+            </block>
+            <block wx:else>
+                <view class="content">{{title}}</view>
+            </block>
+        </view>
+        <view>
+            <slot name="content" />
+        </view>
+        <view class="cu-bar bg-white" wx:if="{{type=='dialog'}}">
+            <block wx:if="{{btnActive.length>0}}">
+                <view wx:for="{{btnActive}}" class="action margin-0 flex-sub {{item.class}}" style="{{item.style}}" bindtap="btnTap" data-value="{{item.id||index}}">{{item.title}}</view>
+            </block>
+            <block wx:else> <slot name="btn" /> </block>
+        </view>
+    </view>
+</view>
+<wxs module="parse">
+    module.exports={
+        end:function(type){
+            if(type=="bottom")return '';
+            return "justify-end"
+        },
+    }
+</wxs>

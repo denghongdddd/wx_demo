@@ -1,0 +1,24 @@
+
+    <view class="body">
+        <tap bgColor="bg-gradual-pink" isBack="isBack">
+            <view slot="backText">返回</view>
+            <view slot="content">拖动排序</view>
+        </tap>
+		
+		<movable-area style="height:{{width*(parse.y(list.length)+1)+3}}px;--w:{{width}}px;">
+			<view  wx:for="{{list}}" class="item-tem" wx:if="{{!isMove||moveIndex!=index}}" style="--top:{{positionList[index].x||0}}px;--left:{{positionList[index].y||0}}px;--s:{{isMove?0.4:0}}s;">{{item}}</view>
+			<view class="add" bindtap="add" style="--top:{{width*parse.y(list.length)+1}}px;--left:{{width*(list.length%5)}}px;">+</view>
+			<movable-view  wx:for="{{list}}" direction="all" disabled="{{!isMove||moveIndex!=index}}" y="{{width*(parse.y(index))}}" x="{{width*(index%5)}}" style="opacity: {{moveIndex==index?1:0}};" damping="9999" friction="9999" bindtouchstart="start" bindtouchend="end" bindtouchcancel="end" bindchange="move" data-wpystart-a="{{index}}">
+				<view>{{item}}</view>
+			</movable-view>
+		</movable-area>
+
+		<wxs module="parse">
+			module.exports={
+				y:function(val){
+					if(val) return parseInt(val/5)
+					return 0;
+				},
+			}
+		</wxs>
+    </view>
