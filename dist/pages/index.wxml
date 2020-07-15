@@ -1,13 +1,18 @@
-<view class="body">  
-	<scroll-view scroll-y class="scrollPage">
-		<image src="/images/BasicsBg.png" mode="widthFix" class="png" style="width:100%;height:486rpx"/>
-		<view class="nav-list">
-		<navigator open-type="navigate" hover-class="none" url="/common/pages/basics/{{item.name}}" class="nav-li bg-{{item.color}}"  wx:for="{{elements}}">
-			<view class="nav-title">{{item.title}}</view>
-			<view class="nav-name">{{item.name}}</view>
-			<text class="cuIcon-{{item.icon}}"/>
-		</navigator>
-		</view>
-		<view class="cu-tabbar-height"/>
-	</scroll-view>
-</view>
+
+    <view class="body">
+		<view style="height:100rpx;"/>
+		incNum:{{stateNum}}
+		async_incNum:{{asyncNum}}
+        <scroll-view scroll-y class="scrollPage">
+          <image src="/images/BasicsBg.png" mode="widthFix" class="png" style="width:100%;height:486rpx"/>
+          <view class="nav-list">
+            <navigator open-type="navigate" hover-class="none" url="/common/pages/basics/{{item.name}}" class="nav-li bg-{{item.color}}"  wx:for="{{elements}}">
+              <view class="nav-title">{{item.title}}</view>
+              <view class="nav-name">{{item.name}}</view>
+              <text class="cuIcon-{{item.icon}}"/>
+            </navigator>
+          </view>
+          <view class="cu-tabbar-height"/>
+        </scroll-view>
+		{{todoList}}
+    </view>
