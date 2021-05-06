@@ -1,13 +1,2 @@
-
-    <view class="body">
-        <tap bgColor="bg-gradual-blue" isBack="{{true}}">
-            <view slot="backText">返回</view>
-            <view slot="content">图标</view>
-        </tap>
-        <view class="icons">
-            <view  wx:for="{{list}}">
-                <text class="cuIcon-{{item}}"/>
-                <text>cuIcon-{{item}}</text>
-            </view>
-        </view>
-    </view>
+<!--common/pages/basics/icon.wxml-->
+<text>common/pages/basics/icon.wxml</text>

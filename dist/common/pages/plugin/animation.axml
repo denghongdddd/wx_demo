@@ -1,0 +1,77 @@
+
+    <view class="body">
+        <tap bgColor="bg-gradual-blue" isBack="{{true}}" bgImage="https://image.weilanwl.com/color2.0/plugin/wdh2236.jpg">
+            <view slot="backText">返回</view>
+            <view slot="content">
+              微动画
+            </view>
+        </tap>
+        
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-title text-orange"/> 默认效果
+            </view>
+        </view>
+        <view class="padding-sm">
+            <view class="flex flex-wrap justify-around">
+                <button class="cu-btn bg-{{item.color}} animation-{{animation==item.name?item.name:''}} margin-sm basis-sm shadow" onTap="toggle"  a:for="{{list}}" a:key="{{index}}" data-wpytoggle-a="{{item.name}}">{{item.name}}</button>
+            </view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-title text-orange"/> 反向动画
+            </view>
+        </view>
+        <view class="padding-sm">
+            <view class="flex flex-wrap justify-around">
+                <button class="cu-btn bg-{{item.color}} animation-{{animation==item.name+'s'?item.name:''}} animation-reverse margin-sm basis-sm shadow" onTap="toggle"  a:for="{{list}}" data-wpytoggle-a="{{item.name}}s">{{item.name}}</button>
+            </view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-title text-orange"/> 延迟执行
+            </view>
+            <view class="action">
+                <button class="cu-btn bg-cyan shadow" onTap="toggleDelay">开始执行</button>
+            </view>
+        </view>
+
+        <view class="padding-sm">
+            <view class="flex flex-wrap justify-around">
+                <button class="bg-{{item.color}} cu-btn {{toggleDelay?'animation-slide-bottom':''}} margin-sm basis-sm shadow" style="animation-delay: {{(index+1)*0.1}}s;" a:for="{{list}}" a:key="{{index}}">0.{{index+1}}s</button>
+            </view>
+        </view>
+        <view class="cu-bar bg-white">
+            <view class="action">
+                <text class="cuIcon-title text-orange"/> Gif动画
+            </view>
+        </view>
+        <view class="margin radius bg-gradual-green shadow-blur">
+            <image src="https://image.weilanwl.com/gif/wave.gif" mode="scaleToFill" class="gif-black response" style="height:100rpx"/>
+        </view>
+        <view class="margin flex">
+            <view class="bg-black flex-sub margin-right radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/loading-black.gif" mode="aspectFit" class="gif-black response" style="height:240rpx"/>
+            </view>
+            <view class="bg-white flex-sub radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"/>
+            </view>
+        </view>
+        <view class="margin flex">
+            <view class="bg-gradual-blue flex-sub margin-right radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/rhomb-black.gif" mode="aspectFit" class="gif-black response" style="height:240rpx"/>
+            </view>
+            <view class="bg-white flex-sub radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/rhomb-white.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"/>
+            </view>
+        </view>
+        <view class="margin flex">
+            <view class="bg-white flex-sub margin-right radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/loading-1.gif" mode="aspectFit" class="gif-white response" style="height:240rpx"/>
+            </view>
+            <view class="bg-black flex-sub radius shadow-lg">
+                <image src="https://image.weilanwl.com/gif/loading-2.gif" mode="aspectFit" class="gif-black response" style="height:240rpx"/>
+            </view>
+        </view>
+
+    </view>

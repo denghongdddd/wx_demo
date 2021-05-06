@@ -1,0 +1,13 @@
+
+    <view class="body">
+        <tap bgColor="bg-gradual-blue" isBack="{{true}}">
+            <view slot="backText">返回</view>
+            <view slot="content">图标</view>
+        </tap>
+        <view class="icons">
+            <view  a:for="{{list}}">
+                <text class="cuIcon-{{item}}"/>
+                <text>cuIcon-{{item}}</text>
+            </view>
+        </view>
+    </view>

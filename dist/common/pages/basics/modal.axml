@@ -1,0 +1,50 @@
+
+    <view class="body">
+      <tap bgColor="bg-gradual-pink" isBack="isBack">
+        <view slot="backText">返回</view>
+        <view slot="content">模态窗口</view>
+      </tap>
+
+      <view class="cu-bar bg-white margin-top">
+        <view class="action">
+          <text class="cuIcon-title text-orange "/> 普通窗口
+        </view>
+        <view class="action">
+          <button class="cu-btn bg-green shadow" onTap="showModal" data-wpyshowmodal-a="Modal">Modal</button>
+        </view>
+      </view>
+      <d-modal id="Modal">
+        <view slot="content">asdasdf</view>
+      </d-modal>
+
+      <view class="cu-bar bg-white margin-top">
+        <view class="action">
+          <text class="cuIcon-title text-orange "/> 底部窗口
+        </view>
+        <view class="action">
+          <button class="cu-btn bg-green shadow" onTap="showModal" data-wpyshowmodal-a="bottomModal">Bottom</button>
+        </view>
+      </view>
+      <d-modal id="bottomModal" type="bottom">
+        <view slot="content">asdasdf</view>
+      </d-modal>
+
+      <view class="cu-bar bg-white margin-top">
+        <view class="action">
+          <text class="cuIcon-title text-orange "/> 对话窗口
+        </view>
+        <view class="action">
+          <button class="cu-btn bg-green shadow" onTap="showModal" data-wpyshowmodal-a="DialogModal1">Dialog</button>
+          <button class="cu-btn bg-blue shadow margin-left" onTap="showModal" data-wpyshowmodal-a="DialogModal2">Dialog</button>
+        </view>
+      </view>
+        <d-modal id="DialogModal1" type="dialog" btnActive="{{active}}" onClick="modalClick" data-wpymodalclick-a="DialogModal1">
+          <view slot="content">dialog btnActive</view>
+        </d-modal>
+        <d-modal id="DialogModal2" type="dialog">
+          <view slot="content">dialogModal btnSlot</view>
+          <view slot="btn" style="width:100%;">
+            <view class="action flex-sub text-green">确定</view>
+          </view>
+        </d-modal>
+    </view>

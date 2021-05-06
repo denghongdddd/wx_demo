@@ -1,15 +1,2 @@
-
-    <view class="body">
-        <tap bgColor="bg-gradual-blue" bgImage="https://image.weilanwl.com/color2.0/plugin/cjkz2329.jpg">
-            <view slot="content">
-              扩展功能
-            </view>
-        </tap>
-        <view class="cu-card">
-          <view class="cu-item ba-img shadow-blur" style="background-image:url({{item.img}})" bindtap="toChild"  wx:for="{{list}}" data-wpytochild-a="{{item.url}}">
-            <view class="cardTitle">
-              {{item.title}}
-            </view>
-          </view>
-        </view>
-    </view>
+<!--pages/plugin.wxml-->
+<text>pages/plugin.wxml</text>

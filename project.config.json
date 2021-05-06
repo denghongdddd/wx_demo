@@ -1,113 +1,126 @@
 {
-	"description": "小程序模板",
-	"setting": {
-		"urlCheck": false,
-		"es6": false,
-		"postcss": false,
-		"minified": false,
-		"newFeature": true,
-		"nodeModules": true,
-		"autoAudits": false,
-		"checkInvalidKey": true,
-		"checkSiteMap": true,
-		"uploadWithSourceMap": true,
-		"babelSetting": {
-			"ignore": [],
-			"disablePlugins": [],
-			"outputPath": ""
-		}
-	},
-	"qcloudRoot":"./",
-	"compileType": "miniprogram",
-	"appid": "wx6736885004bb213e",
-	"projectname": "HuansiAssistant",
-	"miniprogramRoot": "dist/",
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
-	"libVersion": "2.9.0",
-	"condition": {
-		"search": {
-			"current": -1,
-			"list": []
-		},
-		"conversation": {
-			"current": -1,
-			"list": []
-		},
-		"plugin": {
-			"current": -1,
-			"list": []
-		},
-		"game": {
-			"list": []
-		},
-		"miniprogram": {
-			"current": 3,
-			"list": [
-				{
-					"id": 0,
-					"name": "shopVersion/pages/specimen/det",
-					"pathName": "shopVersion/pages/specimen/detail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 1,
-					"name": "shopVersion/pages/receipt_pay/detail",
-					"pathName": "shopVersion/pages/receipt_pay/detail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 2,
-					"name": "me/pages/operation",
-					"pathName": "me/pages/operation",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 3,
-					"name": "pages/BluetoothPrint/index",
-					"pathName": "pages/BluetoothPrint/index",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "shopVersion/pages/specimen/detail",
-					"pathName": "shopVersion/pages/specimen/detail",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 5,
-					"name": "sub/pages/payReceipt/list",
-					"pathName": "sub/pages/payReceipt/list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 6,
-					"name": "sub/pages/quotation/list",
-					"pathName": "sub/pages/quotation/list",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 7,
-					"name": "sub/pages/outStock/deliveryPlayOrderList",
-					"pathName": "sub/pages/outStock/deliveryPlayOrderList",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "sub/pages/outStock/deliveryPlayOrderList",
-					"pathName": "sub/pages/outStock/deliveryPlayOrderList",
-					"query": "",
-					"scene": null
-				}
-			]
-		}
-	}
+  "description": "小程序模板",
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "enhance": false,
+    "postcss": false,
+    "preloadBackgroundData": false,
+    "minified": false,
+    "newFeature": true,
+    "coverView": true,
+    "nodeModules": true,
+    "autoAudits": false,
+    "showShadowRootInWxmlPanel": true,
+    "scopeDataCheck": false,
+    "uglifyFileName": false,
+    "checkInvalidKey": true,
+    "checkSiteMap": true,
+    "uploadWithSourceMap": true,
+    "compileHotReLoad": false,
+    "useMultiFrameRuntime": false,
+    "useApiHook": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "useIsolateContext": true,
+    "useCompilerModule": true,
+    "userConfirmedUseCompilerModuleSwitch": false,
+    "packNpmManually": false,
+    "packNpmRelationList": []
+  },
+  "compileType": "miniprogram",
+  "appid": "wx6736885004bb213e",
+  "projectname": "HuansiAssistant",
+  "miniprogramRoot": "dist/",
+  "simulatorType": "wechat",
+  "simulatorPluginLibVersion": {},
+  "libVersion": "2.9.0",
+  "condition": {
+    "search": {
+      "current": -1,
+      "list": []
+    },
+    "conversation": {
+      "current": -1,
+      "list": []
+    },
+    "plugin": {
+      "current": -1,
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "miniprogram": {
+      "current": 3,
+      "list": [
+        {
+          "id": 0,
+          "name": "shopVersion/pages/specimen/det",
+          "pathName": "shopVersion/pages/specimen/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 1,
+          "name": "shopVersion/pages/receipt_pay/detail",
+          "pathName": "shopVersion/pages/receipt_pay/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 2,
+          "name": "me/pages/operation",
+          "pathName": "me/pages/operation",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 3,
+          "name": "pages/BluetoothPrint/index",
+          "pathName": "pages/BluetoothPrint/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 4,
+          "name": "shopVersion/pages/specimen/detail",
+          "pathName": "shopVersion/pages/specimen/detail",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 5,
+          "name": "sub/pages/payReceipt/list",
+          "pathName": "sub/pages/payReceipt/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 6,
+          "name": "sub/pages/quotation/list",
+          "pathName": "sub/pages/quotation/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": 7,
+          "name": "sub/pages/outStock/deliveryPlayOrderList",
+          "pathName": "sub/pages/outStock/deliveryPlayOrderList",
+          "query": "",
+          "scene": null
+        },
+        {
+          "id": -1,
+          "name": "sub/pages/outStock/deliveryPlayOrderList",
+          "pathName": "sub/pages/outStock/deliveryPlayOrderList",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
 }
